@@ -1,5 +1,5 @@
 :root {
-  --paper: #e8d7b8;
+  --paper: #f5eedc;
   --paper-deep: #d4c09a;
   --ink: #2c2416;
   --ink-soft: #4e4333;
@@ -57,49 +57,9 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background-color: var(--paper);
-  background-image:
-    linear-gradient(90deg, rgba(90, 60, 20, 0.09), transparent 18px),
-    linear-gradient(180deg, rgba(80, 50, 20, 0.08), transparent 28px),
-    linear-gradient(0deg, rgba(70, 40, 10, 0.12), transparent 40px),
-    url("../assets/paper-texture.jpg");
-  background-size: auto, auto, auto, 520px;
-  background-blend-mode: multiply, multiply, multiply, multiply;
+  background: var(--paper);
   box-shadow: 0 0 0 1px rgba(60, 40, 16, 0.25), 8px 0 28px var(--shadow);
   overflow: hidden;
-}
-
-.wear {
-  pointer-events: none;
-  position: absolute;
-  z-index: 2;
-}
-
-.wear-tl {
-  top: -30px;
-  left: -40px;
-  width: 140px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(90, 55, 20, 0.18), transparent 70%);
-}
-
-.wear-br {
-  right: -20px;
-  bottom: 40px;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle, rgba(80, 40, 10, 0.16), transparent 72%);
-}
-
-.foxing {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(circle at 18% 72%, rgba(120, 70, 20, 0.13) 0 18px, transparent 32px),
-    radial-gradient(circle at 82% 28%, rgba(110, 60, 20, 0.1) 0 12px, transparent 26px),
-    radial-gradient(circle at 70% 88%, rgba(90, 50, 20, 0.08) 0 22px, transparent 40px);
 }
 
 .book-top,
@@ -243,16 +203,6 @@ body {
   margin: 0.2rem 0 0.85rem;
 }
 
-.kicker {
-  margin: 0 0 0.35rem;
-  font-family: var(--font-display);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--oxblood);
-  text-align: center;
-}
-
 h1, h2 {
   font-family: var(--font-display);
   font-weight: 600;
@@ -343,14 +293,6 @@ h2 {
   padding: 0.2rem 0.15rem;
 }
 
-.hint {
-  margin: 0.85rem 0 0;
-  font-family: var(--font-hand);
-  font-size: 1.12rem;
-  color: var(--ink-soft);
-  text-align: center;
-}
-
 .cover {
   text-align: center;
   padding-top: 0.2rem;
@@ -374,14 +316,6 @@ h2 {
   margin: 0.15rem 0 0.4rem;
   font-style: italic;
   font-size: 1.15rem;
-}
-
-.imprint {
-  margin-top: 1.1rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
 }
 
 .plate {
@@ -492,17 +426,6 @@ h2 {
 
 .howto li {
   margin: 0 0 0.45rem;
-}
-
-.stain {
-  pointer-events: none;
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 7px solid rgba(90, 55, 20, 0.09);
-  box-shadow: inset 0 0 0 5px rgba(90, 55, 20, 0.05);
-  z-index: 1;
 }
 
 @media (min-width: 720px) {

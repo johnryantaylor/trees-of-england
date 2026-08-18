@@ -14,6 +14,8 @@ python3 -m http.server 8080
 
 Then visit `http://localhost:8080`. On a phone, add it to the home screen if you like; it is built as a small standalone page.
 
+The live guide is at <https://johnryantaylor.github.io/trees-of-england/>.
+
 ## How it works
 
 - Page 1 is the title-page. Page 2 explains the key. The key itself begins on page 3.

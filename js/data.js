@@ -5,8 +5,7 @@
     couplets: [
       {
         id: "start",
-        prompt: "First look at the leaves — or the needles, if that is what the tree wears.",
-        hint: "Choose the line that fits, then turn to the page named.",
+        prompt: "Leaves or needles?",
         choices: [
           { text: "Leaves needle-like or scale-like; fruit a cone, or a berry-like cone. The conifers.", to: "c:conifer-form" },
           { text: "Leaves broad and flat, not needle-like. The broadleaves.", to: "c:broad-habit" }
@@ -129,7 +128,6 @@
       {
         id: "compound-or-simple",
         prompt: "Is each leaf one blade, or several leaflets?",
-        hint: "A compound leaf has a bud at the base of the whole stalk, not at the base of each leaflet.",
         choices: [
           { text: "Leaves compound — divided into separate leaflets.", to: "c:compound-arrange" },
           { text: "Leaves simple — one blade, though it may be lobed or toothed.", to: "c:simple-arrange" }

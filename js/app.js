@@ -97,13 +97,10 @@
     return `
       <div class="cover">
         <img class="cover-plate" src="assets/cover-wreath.jpg" alt="Pencil wreath of oak, holly and pine">
-        <p class="kicker">A pocket field guide</p>
         <h1>Trees of England</h1>
         <p class="subtitle">A key to trees growing wild,<br>native and long since naturalised</p>
         <hr class="rule">
         <p class="lede">Begin at the first question. At each step choose the line that fits the tree before you, and turn to the page it names.</p>
-        <p class="imprint">The Hedgerow Press</p>
-        <p class="hint">Turn the page — or tap the acorn later to begin again.</p>
       </div>`;
   }
 
@@ -111,7 +108,6 @@
     const keyStart = book.coupletPage.start;
     return `
       <div class="howto">
-        <p class="kicker">How to use this book</p>
         <h2>A word to the finder</h2>
         <hr class="rule">
         <p class="prose">This little guide is made in the old way. It does not ask you to leaf through pictures until one looks right. It asks questions, as a botanist’s key does, until the tree is named.</p>
@@ -122,27 +118,21 @@
           <li>The acorn at the top always returns you to the title-page.</li>
         </ol>
         <p class="prose">Willows, elms, oaks and limes hybridise, and some planted trees sit awkwardly in a wild key. Where that is so, the notes on the species page will say. The trees treated here are those you may reasonably meet growing wild in England — in wood, hedge, heath, river, dune, roadside and waste ground — not the rarer ornaments of gardens. Each named tree has a graphite plate of the characters most useful in the field.</p>
-        <p class="hint">${book.species.length} trees are named in these pages. An index is at the end.</p>
       </div>`;
   }
 
   function renderKey(page) {
     const c = page.couplet;
-    const letters = ["a", "b", "c", "d"];
-    const choices = c.choices.map((ch, i) => `
+    const choices = c.choices.map((ch) => `
       <li>
         <button type="button" class="choice" data-goto="${ch.page}">
-          <span class="choice-text"><i>${letters[i]}.</i> ${escapeHtml(ch.text)}</span>
+          <span class="choice-text">${escapeHtml(ch.text)}</span>
           <span class="choice-page">${ch.page}</span>
         </button>
       </li>`).join("");
     return `
-      <p class="kicker">The key</p>
-      <h2>Look closely</h2>
-      <hr class="rule">
       <p class="lede">${escapeHtml(c.prompt)}</p>
-      <ul class="choice-list">${choices}</ul>
-      ${c.hint ? `<p class="hint">${escapeHtml(c.hint)}</p>` : ""}`;
+      <ul class="choice-list">${choices}</ul>`;
   }
 
   function similarLine(species) {
@@ -161,7 +151,6 @@
     const also = s.also && s.also.length ? `<p class="also">also called ${escapeHtml(s.also.join(", "))}</p>` : "";
     const like = similarLine(s);
     return `
-      <p class="kicker">${escapeHtml(s.family)}</p>
       <h2>${escapeHtml(s.common)}</h2>
       <span class="latin">${escapeHtml(s.latin)}</span>
       <p class="meta-line">${escapeHtml(s.status)} · ${escapeHtml(s.height)}</p>
@@ -191,7 +180,6 @@
       </li>`;
     }).join("");
     return `
-      <p class="kicker">At the back of the book</p>
       <h2>Index of trees</h2>
       <hr class="rule">
       <p class="lede">Common names, with the Latin for the sure of hand. Numbers are pages.</p>
@@ -221,14 +209,6 @@
     if (page.type === "species") {
       const hold = sheet.querySelector(".plate-hold");
       if (hold && window.drawTreePlate) window.drawTreePlate(hold, page.species);
-    }
-
-    if ((n % 9 === 0 || n % 13 === 0) && page.type !== "cover") {
-      const stain = document.createElement("div");
-      stain.className = "stain";
-      stain.style.right = (8 + (n % 5) * 7) + "%";
-      stain.style.top = (18 + (n % 7) * 6) + "%";
-      sheet.appendChild(stain);
     }
 
     folio.textContent = "— " + roman(n) + " —";
