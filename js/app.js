@@ -97,10 +97,12 @@
     return `
       <div class="cover">
         <img class="cover-plate" src="assets/cover-wreath.jpg" alt="Pencil wreath of oak, holly and pine">
-        <h1>Trees of England</h1>
-        <p class="subtitle">A key to trees growing wild,<br>native and long since naturalised</p>
+        <p class="subtitle">A guide to native and non-native trees growing wild in England</p>
+        <p class="cover-links">
+          ${pageLink(book.coupletPage.start, "Identification guide")}
+          ${pageLink(book.indexN, "Index")}
+        </p>
         <hr class="rule">
-        <p class="lede">Begin at the first question. At each step choose the line that fits the tree before you, and turn to the page it names.</p>
       </div>`;
   }
 
@@ -110,14 +112,13 @@
       <div class="howto">
         <h2>A word to the finder</h2>
         <hr class="rule">
-        <p class="prose">This little guide is made in the old way. It does not ask you to leaf through pictures until one looks right. It asks questions, as a botanist’s key does, until the tree is named.</p>
+        <p class="prose">The trees included here are those that you might meet growing wild in England. To use the guide:</p>
         <ol>
           <li>Stand with the tree. Take several leaves, not one, and look also at bark, buds, fruit, and the ground beneath.</li>
           <li>Begin the key on ${pageLink(keyStart, "page " + keyStart)}. At each page, two or three statements are offered.</li>
           <li>Choose the statement that fits, and tap the page number in the margin — or simply turn the pages as you would a book.</li>
           <li>The acorn at the top always returns you to the title-page.</li>
         </ol>
-        <p class="prose">Willows, elms, oaks and limes hybridise, and some planted trees sit awkwardly in a wild key. Where that is so, the notes on the species page will say. The trees treated here are those you may reasonably meet growing wild in England — in wood, hedge, heath, river, dune, roadside and waste ground — not the rarer ornaments of gardens. Each named tree has a graphite plate of the characters most useful in the field.</p>
       </div>`;
   }
 
