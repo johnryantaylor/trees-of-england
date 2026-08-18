@@ -1,0 +1,16 @@
+{
+  "name": "Trees of England",
+  "short_name": "Trees of England",
+  "description": "A pocket field guide to trees growing wild in England.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#cbb892",
+  "theme_color": "#cbb892",
+  "icons": [
+    {
+      "src": "assets/acorn-icon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
